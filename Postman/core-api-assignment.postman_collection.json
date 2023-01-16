@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "3f817165-36d6-477d-85c7-d0152aff07e8",
+		"name": "core-api-assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18316864"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "reece.grimes@farrell.info",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "866818",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/core-php/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"core-php",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "a@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/core-php/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"core-php",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer d39f25b5e5c3cf2f66fe593b7d85f438d9ab7548f56cd9bdd02bbe6e413c76dcf46e924752c21406a453ba10b4557d82f3d46a06b8c5ac2dfee555eadccc8bb0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"subject\": \"my task\",\n    \"description\": \"task description\",\n    \"start_date\": \"2023-01-13 15:09:28\",\n    \"due_date\": \"2023-01-17 19:39:29\",\n    \"status\": \"New\",\n    \"priority\": \"Low\",\n    \"notes\": [\n        {\n            \"subject\": \"notes\",\n            \"attachment\": \"attachment\",\n            \"note\": \"note details\"\n        },\n        {\n            \"subject\": \"notes\",\n            \"attachment\": \"attachment\",\n            \"note\": \"note details\"\n        },\n        {\n            \"subject\": \"notes\",\n            \"attachment\": \"attachment\",\n            \"note\": \"note details\"\n        },\n        {\n            \"subject\": \"notes\",\n            \"attachment\": \"attachment\",\n            \"note\": \"note details\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/core-php/task/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"core-php",
+						"task",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tasks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ad95423ff61bc9d91798d5b5826065c7bafee993e651071e6e1ead9335f6436cbe2dfc88f739d8352628e68041efd30ef0b16d49409abcc7477192059a8c3c6e",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 39f25b5e5c3cf2f66fe593b7d85f438d9ab7548f56cd9bdd02bbe6e413c76dcf46e924752c21406a453ba10b4557d82f3d46a06b8c5ac2dfee555eadccc8bb0",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost/core-php/task/all?status=New&due_date=2023-01-17&priority=high&notes=note",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"core-php",
+						"task",
+						"all"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "New"
+						},
+						{
+							"key": "due_date",
+							"value": "2023-01-17"
+						},
+						{
+							"key": "priority",
+							"value": "high"
+						},
+						{
+							"key": "notes",
+							"value": "note"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
